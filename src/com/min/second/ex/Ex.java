@@ -32,6 +32,8 @@ public class Ex {
 		System.out.println(star);
 		
 	}
+	
+	
 		
 
 	
