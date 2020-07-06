@@ -15,16 +15,28 @@ public class CardDeck {
 	private void init() {
 		for(int i=0; i<Card.PATTERNS.length; i++) {	
 			for(int z =1; z<=13; z++) {
-				arr.add(new Card(Card.PATTERNS[i], getDeno(z)));
-				/*
-				 * String pattern = Card.PATTERNS[i];
-				 * String deno = getDeno(z);
-				 * Card c = new Card(pattern, deno);
-				 * arr.add(c);
+				//arr.add(new Card(Card.PATTERNS[i], getDeno(z)));
+				 int point = z;
+				 if(z>10) {
+					 point = 10;
+				 }
+				 arr.add(new Card(Card.PATTERNS[i],getDeno(z),point));
+				 /*
+				 String pattern = Card.PATTERNS[i];
+				 String deno = getDeno(z);
+				 int point = getPoint(z);
+				 Card c = new Card(pattern, deno, point);
+				 arr.add(c);
 				 */
 			}
+			
 		}
 	}
+	/*
+	 * private int getPoint(int num){
+	 * 		return num>10? 10:num;
+	 * }
+	 */
 		
 	private String getDeno(int num) {
 		switch(num) {
@@ -57,10 +69,11 @@ public class CardDeck {
 	public Card getCard() {
 		
 		int select = (int)(Math.random()*arr.size());
-		Card cd = arr.get(select);
+		return arr.remove(select);
+		/*Card cd = arr.get(select);  //위랑 같은 의미
 		arr.remove(select);
 		
-		return cd;
+		return cd;*/
 	}
 	
 }
