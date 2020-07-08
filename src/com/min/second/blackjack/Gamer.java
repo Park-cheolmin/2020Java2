@@ -46,8 +46,7 @@ public class Gamer {
 			if(answer.equals("n")) {
 				break;
 			} else if(answer.equals("y")) {
-				receiveCard(cd.getCard());
-				
+				receiveCard(cd.getCard());	
 			} else {
 				System.out.println("다시입력하세요");
 			}
