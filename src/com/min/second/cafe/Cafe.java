@@ -19,5 +19,6 @@ public class Cafe {
 		
 		MenuItem choiceMenu = cus.order(menu);
 		Coffee coffee = bas.makeCoffee(choiceMenu);
+		cus.drinkCoffee(coffee);
 	}
 }
